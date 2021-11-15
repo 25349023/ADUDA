@@ -49,5 +49,5 @@ summaryLength = 30
     meta_twitter_creator = "@zerostaticio"
 
   [params.logo]
-      mobile = "/images/logo-mobile.svg"
+      mobile = "husky_logo.png"
       standard  = "husky_logo.png"
