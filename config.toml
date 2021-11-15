@@ -50,4 +50,4 @@ summaryLength = 30
 
   [params.logo]
       mobile = "/images/logo-mobile.svg"
-      standard  = "elsalab_logo.jpeg"
+      standard  = "husky_logo.png"
