@@ -24,7 +24,7 @@ The result shows that we can achieve rather high mIoU score without any labeled 
 
 ## RL training
 
-| action                                 | reward |
+| Action                                 | Reward |
 | -------------------------------------- | ------ |
 | if moving out off the track            | -5     |
 | if hitting obstacles                   | -5     |

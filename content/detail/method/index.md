@@ -60,4 +60,8 @@ We use Urban Traffic System asset to design a RL environment in Unity, and this 
 
 We next discuss how we deploy our UDA-SST model and RL agent to NVIDIA Xavier and Clearpath HUSKY A200. We equip it with a Zed2 camera, which can support 720p 60 FPS streaming video. HUSKY is controlled by Robot Operating System (ROS). We wrap each module into a ROS Node, listening from the previous module, and publishing processed data to the next module. Zed Camera Controller will publish RGB images to UDA-SST module. UDA-SST module will generate semantic segmentation and stack it with the previous semantic segmentation frame. RL Agent will then use the stacked semantic segmentation masks to make decisions and send signals to the HUSKY controller. In our experiment, inferencing an image using ResNet-101 based model on NVIDIA Xavier has up to 1.0s latency, which is not very ideal for autonomous vehicles. As the result, we choose to distill our UDA-SST models to a single MobileNet based model. MobileNet can result in lower latency (0.09s) and a higher frame rate.
 
-![](../../images/husky.jpg)
+<!-- ![](../../images/husky.jpg) -->
+
+{{< rawhtml >}}
+  <img src="../../images/husky.jpg" style="max-width: 400px; display: block; margin-left: auto; margin-right: auto;">
+{{< /rawhtml >}}
