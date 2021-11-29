@@ -1,0 +1,148 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<title>Results - ADUDA</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=icon href=https://aduda.engine210.site/favicon.png>
+<link rel=stylesheet href=/css/style.min.6719d72e323121369d5caeb4264b95d8a63cf1deaab029da67602fe5a046e0a4.css>
+</head>
+<body class="page page-default-single">
+<div id=main-menu-mobile class=main-menu-mobile>
+<ul>
+<li class=menu-item-home>
+<a href=/>
+<span>Home</span>
+</a>
+</li>
+<li class=menu-item-detail>
+<a href=/detail/>
+<span>Detail</span>
+</a>
+</li>
+</ul>
+</div>
+<div class=wrapper>
+<div class=header>
+<div class=container>
+<div class=logo>
+<a href=https://aduda.engine210.site/><img alt=Logo src=/husky_logo.png></a>
+</div>
+<div class=logo-mobile>
+<a href=https://aduda.engine210.site/><img alt=Logo src=/husky_logo.png></a>
+</div>
+<div id=main-menu class=main-menu>
+<ul>
+<li class=menu-item-home>
+<a href=/>
+<span>Home</span>
+</a>
+</li>
+<li class=menu-item-detail>
+<a href=/detail/>
+<span>Detail</span>
+</a>
+</li>
+</ul>
+</div>
+<button id=toggle-main-menu-mobile class="hamburger hamburger--slider" type=button>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css integrity=sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js integrity=sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:!0},{left:'$',right:'$',display:!1},{left:'\\(',right:'\\)',display:!1},{left:'\\[',right:'\\]',display:!0}],throwOnError:!1})})</script>
+</div>
+</div>
+<div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+<div class=row>
+<div class="col-12 col-md-3 mb-3">
+<div class=sidebar>
+<div class=docs-menu>
+<h4>Detail</h4>
+<ul>
+<li>
+<a href=https://aduda.engine210.site/detail/related_works/>Related Works</a>
+</li>
+<li>
+<a href=https://aduda.engine210.site/detail/method/>Method</a>
+</li>
+<li class=active>
+<a href=https://aduda.engine210.site/detail/results/>Results</a>
+</li>
+<li>
+<a href=https://aduda.engine210.site/detail/conclusion/>Conclusion</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-9">
+<h1 class=title>Results</h1>
+<div class=content>
+<h2 id=uda-sst>UDA-SST</h2>
+<p>We conduct several experiments on two synthetic-to-real adaptation tasks to demonstrate the effectiveness of our UDA techniques. The two synthetic-to-real adaptation tasks are GTA5 $\to$ Cityscapes and GTA5 $\to$ NTHU. To be specific, we validate our method by comparing with the previous work in the first task GTA5 $\to$ Cityscapes. In the second task, we present the adaptation result on our dataset NTHU.</p>
+<h4 id=gta5-to-cityscapes>GTA5 $\to$ Cityscapes</h4>
+<p><img src=../../images/gta5_benchmarks.jpg alt></p>
+<p>GTA5 $\to$ Cityscapes is the standard benchmark for UDA-SST. We compare our method with the previous works. First, we can observe that all the experiments with consistency learning outperforms the baseline version by a large margin. Thus, we can prove that our consistency learning framework can indeed help the model learn a better knowledge of the target domain. By integrating the existing UDA methods with our consistency learning framework, we can expect a considerable improvement. Next, we show that applying quantization or gray-world to the image can result in a performance boost. This is quite amazing since these are just simple calibrations on the input image. Thus, we can add these techniques to every UDA method without changing the training framework and the network design. Lastly, by exploiting the information in edge prediction, we have a competitive result with the previous version that utilizes depth information. However, our method is less complicated because we do not need additional data to train the depth estimator.</p>
+<h4 id=gta5-to-nthu>GTA5 $\to$ NTHU</h4>
+<p><img src=../../images/nthu_benchmarks.jpg alt></p>
+<p>NTHU is a dataset collected by ourselves that contains 2650 images on the campus of the National Tsing Hua University. Specifically, We drove HUSKY A200 around the campus and collected images using the Zed camera on it. As described in \cref{sssec:env}, we define nine classes for semantic segmentation. We labeled 40 images as the testing set and reported the testing result in \cref{tab:nthu_benchmark}.</p>
+<p>The result shows that we can achieve rather high mIoU score without any labeled data of the target domain dataset, proving that UDA-SST is indeed a practical method that can apply to real applications. Moreover, our UDA-SST model contributes to a remarkable performance improvement compared with the model that trained with only source dataset without adaptation. Overall, we can confirm that UDA-SST is an effective method to close the domain gap and result in better adaptation. Surprisingly, we can further distill the knowledge into a lighter model for the sake of implementing the model in real-time. In our work, we distill the knowledge of our well-trained model using Resnet-101 as backbone to a light-weight model with backbone MobileNetv2, which demonstrates tremendous speedup (about 10 times faster) with acceptable performance.</p>
+<h2 id=rl-training>RL training</h2>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>reward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if moving out off the track</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>if hitting obstacles</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>if reaching the goal</td>
+<td>+5</td>
+</tr>
+<tr>
+<td>if turning right or left and surviving</td>
+<td>+0.01</td>
+</tr>
+<tr>
+<td>if going straight and surviving</td>
+<td>+0.015</td>
+</tr>
+</tbody>
+</table>
+<p>Table above shows the average reward return of evaluation during training for PPO and SAC. We train each algorithm with three different random seeds and perform one evaluation rollout every 10000 environment steps. In the reward setting part, when the agent arrivals the goal successfully, it will receive a high reward of +5. To teach the agent to learn obstacle-avoiding and only run on the road, we give a penalty of -5 once it collides with objects or runs out off the track. In addition, to encourage the agent to survive, we give it a +0.01 survival reward. We also hope our agent can act like a person, which means it will not move so randomly but go straight while there is nothing that should be avoided, so we set an extra reward of +0.005 to encourage it to choose a go straight action. In summary, the reward at time step $t$ is defined as following:</p>
+<h2 id=husky>Husky</h2>
+<p>We integrate the segmentation and RL agent, deploying them to NVIDIA Xavier and Clearpath HUSKY A200 while also testing its ability in the real world. We use MobileNet as our segmentation model and PPO algorithm for our RL agent. Setting the inference FPS as 5 means the RL agent will make 5 decisions in one second. In other words, every action selected by the RL agent will repeat for roughly 0.2 seconds. After setting up the pipeline, we ask HUSKY to perform obstacle avoidance on the campus of National Tsing-Hua University. To be specific, HUSKY will try to avoid pedestrians, bikes, and cars while driving along the road. In our real-world experiments, we observe that HUSKY can take correct actions to avoid obstacles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=sub-footer>
+<div class=container>
+<div class=row>
+<div class=col-12>
+<div class=sub-footer-inner>
+<ul>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type=text/javascript src=/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js></script>
+</body>
+</html>
