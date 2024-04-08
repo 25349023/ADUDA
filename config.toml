@@ -29,7 +29,7 @@ summaryLength = 30
 
 [params]
   google_analytics_id=""
-  homepage_button_link = '/detail'
+  homepage_button_link = '/ADUDA/detail'
   homepage_button_text = 'Read More'
   homepage_intro = 'ADUDA: Autonomous Driving with Unsupervised Domain Adaptation for Semantic Segmentation'
   homepage_image = ''
