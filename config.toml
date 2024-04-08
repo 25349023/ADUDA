@@ -1,4 +1,4 @@
-baseURL = "https://25349023.github.io/ADUDA/"
+baseURL = "https://25349023.github.io/"
 languageCode = "en-us"
 title = "ADUDA"
 themesDir = "themes"
@@ -41,7 +41,7 @@ summaryLength = 30
     meta_description = "ADUDA: Autonomous Driving with Unsupervised Domain Adaptation for Semantic Segmentation"
     meta_og_title = "ADUDA"
     meta_og_type = "website"
-    meta_og_url = "https://25349023.github.io/ADUDA"
+    meta_og_url = "https://25349023.github.io"
     meta_og_image = ""
     meta_og_description = "ADUDA: Autonomous Driving with Unsupervised Domain Adaptation for Semantic Segmentation"
 
